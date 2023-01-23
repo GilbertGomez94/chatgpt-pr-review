@@ -1,5 +1,7 @@
 import openai
 import os
+import sys 
+
 
 openai.api_key = os.getenv('OPENAI_KEY')
 
@@ -20,7 +22,9 @@ def main():
                 stop=None,
                 temperature=0.5
             )
-    os.environ['PROMPT_OUTPUT'] = response["choices"][0]["text"]
+    out = response["choices"][0]["text"]
+    print(f"::set-output name=prompt_output::{out}")
+    sys.exit(0)
 
 
 if __name__ == '__main__':
