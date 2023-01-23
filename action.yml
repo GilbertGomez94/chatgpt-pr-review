@@ -1,0 +1,9 @@
+name: "ChatGPT PR Checker"
+description: "Custom action to make reviews over the created PR."
+inputs:
+  prompt:
+    description: "The promtp to ask ChatGPT the changes over the pull request"
+    required: true
+outputs:
+  prompt_output:
+    description: "The response of ChatGPT"
