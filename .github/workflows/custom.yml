@@ -11,6 +11,7 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Get git diff
+      id: get_git_diff
       run: |
         pip install openai
         git_diff=$(git diff ${{ github.base_ref }}...${{ github.head_ref }})
