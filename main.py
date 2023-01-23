@@ -8,6 +8,7 @@ openai.api_key = os.getenv('OPENAI_KEY')
 
 def main():
     prompt = os.environ.get("INPUT_PROMPT")
+    print("received impunt ", prompt)
     # changes = " ".join(prompt)
     changes = prompt.replace('"', '')
     question = f"""
