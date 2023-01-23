@@ -5,7 +5,7 @@ inputs:
     description: "The promtp to ask ChatGPT the changes over the pull request"
     required: true
 outputs:
-  prompt_output:
+  myoutput:
     description: "The response of ChatGPT"
 runs:
   using: "docker"
