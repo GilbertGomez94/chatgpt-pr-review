@@ -12,8 +12,9 @@ def main():
     # changes = " ".join(prompt)
     changes = prompt.replace('"', '')
     question = f"""
-             Como un revisor experto de pull request, podrías dar un resumen de 1 línea sobre los cambios entre una rama y otra:
+             Ejecute un git diff y lo siguiente fue el output que me dio:
              {changes}
+             Imaginando que eres un revisor de pull request, podrías explicar qué cambios se están realizando?
              """
     response = openai.Completion.create(
                 engine="text-davinci-002",
