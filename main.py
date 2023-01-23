@@ -26,7 +26,7 @@ def main():
             )
     out = response["choices"][0]["text"]
     print(f"::set-output name=prompt_output::{out}")
-    sys.exit(0)
+    
 
 
 if __name__ == '__main__':
