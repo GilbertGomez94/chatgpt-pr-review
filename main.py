@@ -27,6 +27,7 @@ def main():
             )
     out = response["choices"][0]["text"]
     out = out.strip()
+    out = out.replace('. ', ".\n")
     # cmd='echo \"::set-output name=myoutput::'+out+'\"'
     # subprocess.call([str(cmd)], shell=True)
     with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
