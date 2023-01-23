@@ -9,4 +9,4 @@ outputs:
     description: "The response of ChatGPT"
 runs:
   using: "docker"
-  image: "python:3.8"
+  image: "Dockerfile"
