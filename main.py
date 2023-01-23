@@ -26,8 +26,10 @@ def main():
                 temperature=0.5
             )
     out = response["choices"][0]["text"]
-    cmd='echo \"::set-output name=myoutput::'+out+'\"'
-    subprocess.call([str(cmd)], shell=True)
+    # cmd='echo \"::set-output name=myoutput::'+out+'\"'
+    # subprocess.call([str(cmd)], shell=True)
+    with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+        print(f'myoutput={out}', file=fh)
     # subprocess.run(f"echo '::set-output name=prompt_output::{out}'", shell=True)
     
     
