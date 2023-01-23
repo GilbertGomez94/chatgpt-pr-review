@@ -11,7 +11,7 @@ def main():
     # changes = " ".join(prompt)
     changes = prompt.replace('"', '')
     question = f"""
-             Imaginando que eres un revisor de pull request, podrías decir explicitamente que cambios se están realizando en el código:
+             Imaginando que eres un revisor de pull request, podrías decir explicitamente que cambios se están realizando los archivos dentro del código:
              {changes}
              """
     response = openai.Completion.create(
