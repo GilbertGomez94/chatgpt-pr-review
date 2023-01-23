@@ -1,4 +1,4 @@
-name: "ChatGPT PR Checker"
+name: "pr_checker"
 description: "Custom action to make reviews over the created PR."
 inputs:
   prompt:
