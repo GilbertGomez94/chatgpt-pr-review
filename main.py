@@ -23,7 +23,7 @@ def main():
                 temperature=0.5
             )
     out = response["choices"][0]["text"]
-    print(f"::set-output name=prompt_output::{out}")
+    print(f"prompt_output={out}")
     sys.exit(0)
 
 
