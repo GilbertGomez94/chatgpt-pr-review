@@ -12,7 +12,7 @@ def main():
     # changes = " ".join(prompt)
     changes = prompt.replace('"', '')
     question = f"""
-             Imaginando que eres un revisor de pull request, podrías dar un resumen de los cambios que está mostrando el git diff:
+             Como un revisor experto de pull request, podrías dar un resumen de 1 línea sobre los cambios entre una rama y otra:
              {changes}
              """
     response = openai.Completion.create(
