@@ -8,10 +8,10 @@ openai.api_key = os.getenv('OPENAI_KEY')
 
 def main():
     prompt = os.environ.get("INPUT_PROMPT")
-    changes = " ".join(prompt)
-    changes = changes.replace('"', '')
+    # changes = " ".join(prompt)
+    changes = prompt.replace('"', '')
     question = f"""
-             Imaginando que eres un revisor de pull request, podrías decir explicitamente  que cambios se están realizando dentro de un repositorio de git:
+             Imaginando que eres un revisor de pull request, podrías decir explicitamente que cambios se están realizando dentro de un repositorio de git:
              {changes}
              """
     response = openai.Completion.create(
