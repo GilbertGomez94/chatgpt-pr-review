@@ -1,23 +1,27 @@
 import openai
+import os
 
-# Configurar credenciales de acceso a la API de OpenAI
-openai.api_key = "sk-"
+openai.api_key = os.getenv('OPENAI_KEY')
 
-# Define la pregunta a hacerme
-question = f"""
-            Podrías decirme qué cambios se están haciendo en lo siguiente:
-            
-            """
 
-# Llama al modelo y obtiene la respuesta
-response = openai.Completion.create(
-    engine="text-davinci-002",
-    prompt=(question),
-    max_tokens=1024,
-    n =1,
-    stop=None,
-    temperature=0.5
-)
+def main():
+    prompt = os.environ.get("INPUT_PROMPT")
+    changes = " ".join(prompt)
+    changes = changes.replace('"', '')
+    question = f"""
+             Imaginando que eres un revisor de pull request, podrías decir explicitamente  que cambios se están realizando dentro de un repositorio de git:
+             {changes}
+             """
+    response = openai.Completion.create(
+                engine="text-davinci-002",
+                prompt=(question),
+                max_tokens=2048,
+                n =1,
+                stop=None,
+                temperature=0.5
+            )
+    os.environ['PROMPT_OUTPUT'] = response["choices"][0]["text"]
 
-# Imprime la respuesta
-print(response["choices"][0]["text"])
+
+if __name__ == '__main__':
+    main()
