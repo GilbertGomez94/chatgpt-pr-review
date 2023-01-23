@@ -17,11 +17,8 @@ jobs:
       shell: bash
 
     - name: My Python action
-      uses: GilbertGomez94/chatgpt-pr-review/pr_checker
+      uses: GilbertGomez94/chatgpt-pr-review/.github/actions/pr_checker
       id: custom_step
       with:
         prompt: ${{ steps.get_git_diff.outputs.git_diff }}
-
-    - name: Outputs
-      run: echo "My output value is ${{ steps.custom_step.outputs.PROMPT_OUTPUT }}"
 
