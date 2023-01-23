@@ -1,6 +1,7 @@
 import openai
 import os
 import sys 
+import subprocess
 
 
 openai.api_key = os.getenv('OPENAI_KEY')
@@ -25,7 +26,8 @@ def main():
                 temperature=0.5
             )
     out = response["choices"][0]["text"]
-    print(f"::set-output name=prompt_output::{out}")
+    subprocess.run(f"echo '::set-output name=prompt_output::{out}'", shell=True)
+    
     
 
 
