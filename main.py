@@ -26,7 +26,9 @@ def main():
                 temperature=0.5
             )
     out = response["choices"][0]["text"]
-    subprocess.run(f"echo '::set-output name=prompt_output::{out}'", shell=True)
+    cmd='echo \"::set-output name=prompt_output::'+out+'\"'
+    subprocess.call([str(cmd)], shell=True)
+    # subprocess.run(f"echo '::set-output name=prompt_output::{out}'", shell=True)
     
     
 
