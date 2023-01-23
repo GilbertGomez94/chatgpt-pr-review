@@ -7,3 +7,6 @@ inputs:
 outputs:
   prompt_output:
     description: "The response of ChatGPT"
+runs:
+  using: "docker"
+  image: "python:3.8"
